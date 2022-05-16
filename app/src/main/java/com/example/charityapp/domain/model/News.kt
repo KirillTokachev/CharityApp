@@ -1,7 +1,7 @@
 package com.example.charityapp.domain.model
 
 data class News(
-    val id: Int,
+    val id: Long,
     val name: String,
     val avatarNews: String,
     val description: String,
@@ -13,5 +13,6 @@ data class News(
     val address: String,
     val phone: String,
     val company: String,
+    // Данное поле выступает в качестве флага, прочитана новость или нет,для сортировки
     var read: Boolean = false
 )

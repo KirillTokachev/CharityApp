@@ -9,5 +9,6 @@ data class User(
     val profession: String,
     @DrawableRes val avatar: Int,
     val friends: List<User>,
+    // Поле которое даёт понять, стоит пуш уведомление у пользователя или нет
     val push: Boolean = false
 )
