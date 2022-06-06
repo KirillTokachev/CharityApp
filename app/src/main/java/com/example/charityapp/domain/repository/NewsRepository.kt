@@ -7,5 +7,4 @@ interface NewsRepository {
     suspend fun loadNews(): List<News>
 
     suspend fun saveNews(news: List<News>)
-
 }
