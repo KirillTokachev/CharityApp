@@ -5,8 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.charityapp.data.database.DbUtil.DB_NAME
 
-@Database(entities = [NewsDbModel::class, HelpCategoryDbModel::class], version = 1)
+@Database(
+    entities = [NewsDbModel::class, HelpCategoryDbModel::class],
+    version = DbUtil.DB_VERSION
+)
 @TypeConverters(ListToStringConverter::class)
 abstract class AppDataBase : RoomDatabase() {
 
@@ -15,7 +19,6 @@ abstract class AppDataBase : RoomDatabase() {
 
     companion object {
         private var db: AppDataBase? = null
-        private const val DB_NAME = "app_database"
         private val LOCK = Any()
 
         fun getInstance(context: Context): AppDataBase {
@@ -26,8 +29,7 @@ abstract class AppDataBase : RoomDatabase() {
                         context,
                         AppDataBase::class.java,
                         DB_NAME,
-                    )
-                        .fallbackToDestructiveMigration()
+                    ).fallbackToDestructiveMigration()
                         .build()
                 db = instance
                 return instance

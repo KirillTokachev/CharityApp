@@ -5,11 +5,11 @@ import retrofit2.http.Headers
 
 interface ApiService {
 
-    @GET("./categories")
+    @GET(GETS.CATEGORIES)
     @Headers("Content-Type: application/json")
-    suspend fun getHelpCategoryList(): List<HelpCategoryDto>
+    suspend fun getHelpCategoryList(): List<HelpCategoryNet>
 
-    @GET("./news")
+    @GET(GETS.NEWS)
     @Headers("Content-Type: application/json")
-    suspend fun getNewsList(): List<NewsDto>
+    suspend fun getNewsList(): List<NewsNet>
 }

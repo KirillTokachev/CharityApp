@@ -1,6 +1,6 @@
 package com.example.charityapp.data.network
 
-data class NewsDto(
+data class NewsNet(
     val id: Long,
     val name: String,
     val avatarNews: String,
