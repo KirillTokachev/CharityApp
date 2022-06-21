@@ -8,7 +8,7 @@ import androidx.room.Query
 @Dao
 interface HelpCategoryDao {
 
-    @Query("SELECT * FROM DbUtil.help_category")
+    @Query("SELECT * FROM ${DbUtil.HELP_CATEGORY}")
     suspend fun loadHelpList(): List<HelpCategoryDbModel>
 
     @Insert(entity = HelpCategoryDbModel::class, onConflict = OnConflictStrategy.REPLACE)

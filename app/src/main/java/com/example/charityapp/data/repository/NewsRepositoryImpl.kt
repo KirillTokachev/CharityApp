@@ -13,16 +13,12 @@ class NewsRepositoryImpl(
 ) : NewsRepository {
 
     override suspend fun loadNews(): List<News> {
-        return newsDao.loadNews().map {
-            newsDbToNewsDomainMapper.invoke(it)
-        }
+        return newsDao.loadNews().map(newsDbToNewsDomainMapper)
     }
 
     override suspend fun saveNews(news: List<News>) {
         newsDao.saveNews(
-            news.map {
-                newsDomainToNewsDbMapper.invoke(it)
-            }
+            news.map(newsDomainToNewsDbMapper)
         )
     }
 }

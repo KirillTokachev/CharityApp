@@ -6,19 +6,21 @@ import com.example.charityapp.data.network.NewsNet
 class NewsNetToNewsDbMapper constructor() : (NewsNet) -> NewsDbModel {
 
     override fun invoke(net: NewsNet) =
-        NewsDbModel(
-            id = net.id,
-            name = net.name,
-            avatarNews = net.avatarNews,
-            description = net.description,
-            dateStart = net.dateStart,
-            dateEnd = net.dateEnd,
-            helpCategory = net.helpCategory,
-            fullDescription = net.fullDescription,
-            newsImages = net.newsImages,
-            address = net.address,
-            phone = net.phone,
-            company = net.company,
-            read = net.read
-        )
+        with(net) {
+            NewsDbModel(
+                id = id,
+                name = name,
+                avatarNews = avatarNews,
+                description = description,
+                dateStart = dateStart,
+                dateEnd = dateEnd,
+                helpCategory = helpCategory,
+                fullDescription = fullDescription,
+                newsImages = newsImages,
+                address = address,
+                phone = phone,
+                company = company,
+                read = read
+            )
+        }
 }

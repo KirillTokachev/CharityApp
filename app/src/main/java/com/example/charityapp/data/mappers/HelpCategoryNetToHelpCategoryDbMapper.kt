@@ -7,9 +7,11 @@ class HelpCategoryNetToHelpCategoryDbMapper constructor() :
         (HelpCategoryNet) -> HelpCategoryDbModel {
 
     override fun invoke(net: HelpCategoryNet) =
-        HelpCategoryDbModel(
-            id = net.id,
-            name = net.name,
-            icon = net.icon
-        )
+        with(net) {
+            HelpCategoryDbModel(
+                id = id,
+                name = name,
+                icon = icon
+            )
+        }
 }

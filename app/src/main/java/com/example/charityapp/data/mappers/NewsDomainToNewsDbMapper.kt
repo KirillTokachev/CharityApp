@@ -6,19 +6,21 @@ import com.example.charityapp.domain.model.News
 class NewsDomainToNewsDbMapper constructor() : (News) -> NewsDbModel {
 
     override fun invoke(entity: News) =
-        NewsDbModel(
-            id = entity.id,
-            name = entity.name,
-            avatarNews = entity.avatarNews,
-            description = entity.description,
-            dateStart = entity.dateStart,
-            dateEnd = entity.dateEnd,
-            helpCategory = entity.helpCategory,
-            fullDescription = entity.fullDescription,
-            newsImages = entity.newsImages,
-            address = entity.address,
-            phone = entity.phone,
-            company = entity.company,
-            read = entity.read
-        )
+        with(entity) {
+            NewsDbModel(
+                id = id,
+                name = name,
+                avatarNews = avatarNews,
+                description = description,
+                dateStart = dateStart,
+                dateEnd = dateEnd,
+                helpCategory = helpCategory,
+                fullDescription = fullDescription,
+                newsImages = newsImages,
+                address = address,
+                phone = phone,
+                company = company,
+                read = read
+            )
+        }
 }

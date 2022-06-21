@@ -13,16 +13,12 @@ class HelpCategoryRepositoryImpl(
 ) : HelpCategoryRepository {
 
     override suspend fun loadHelpList(): List<HelpCategory> {
-        return helpCategoryDao.loadHelpList().map {
-            helpCategoryDbToHelpCategoryDomainMapper.invoke(it)
-        }
+        return helpCategoryDao.loadHelpList().map(helpCategoryDbToHelpCategoryDomainMapper)
     }
 
     override suspend fun saveHelps(helpsList: List<HelpCategory>) {
         helpCategoryDao.saveHelps(
-            helpsList.map {
-                helpCategoryDomainToHelpCategoryDbMapper.invoke(it)
-            }
+            helpsList.map(helpCategoryDomainToHelpCategoryDbMapper)
         )
     }
 }

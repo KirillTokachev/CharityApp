@@ -7,9 +7,11 @@ class HelpCategoryDomainToHelpCategoryDbMapper constructor() :
         (HelpCategory) -> HelpCategoryDbModel {
 
     override fun invoke(entity: HelpCategory) =
-        HelpCategoryDbModel(
-            id = entity.id,
-            name = entity.name,
-            icon = entity.icon
-        )
+        with(entity) {
+            HelpCategoryDbModel(
+                id = id,
+                name = name,
+                icon = icon
+            )
+        }
 }
