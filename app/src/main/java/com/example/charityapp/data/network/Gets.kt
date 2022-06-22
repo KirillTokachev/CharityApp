@@ -1,6 +1,6 @@
 package com.example.charityapp.data.network
 
-object GETS {
+object Gets {
     const val CATEGORIES = "/categories"
     const val NEWS = "/news"
 }
