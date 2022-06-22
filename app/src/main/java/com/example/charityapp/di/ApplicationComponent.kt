@@ -1,21 +1,21 @@
 package com.example.charityapp.di
 
 import android.app.Application
-import com.example.charityapp.presentation.CharityApplication
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Singleton
 
-@ApplicationScope
+@Singleton
 @Component(
     modules = [
-        DataModule::class,
+        NewsModule::class,
+        HelpCategoryModule::class,
+        ApiServiceModule::class,
         NewsUseCaseModule::class,
         HelpCategoryUseCaseModule::class
     ]
 )
 interface ApplicationComponent {
-
-    fun inject(application: CharityApplication)
 
     @Component.Factory
     interface Factory {

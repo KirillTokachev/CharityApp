@@ -13,36 +13,16 @@ import com.example.charityapp.domain.repository.NewsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
-interface DataModule {
+interface NewsModule {
 
     @Binds
-    @ApplicationScope
     fun bindNewsRepository(impl: NewsRepositoryImpl): NewsRepository
 
-    @Binds
-    @ApplicationScope
-    fun bindHelpCategoryRepository(impl: HelpCategoryRepositoryImpl): HelpCategoryRepository
-
-    companion object {
-
-        @Provides
-        @ApplicationScope
-        fun provideNewsDao(application: Application): NewsDao {
-            return AppDataBase.getInstance(application).getNewsDao()
-        }
-
-        @Provides
-        @ApplicationScope
-        fun provideHelpCategoryDao(application: Application): HelpCategoryDao {
-            return AppDataBase.getInstance(application).getHelpCategoryDao()
-        }
-
-        @Provides
-        @ApplicationScope
-        fun provideApiService(): ApiService {
-            return ApiFactory.apiService
-        }
+    @Provides
+    fun provideNewsDao(application: Application): NewsDao {
+        return AppDataBase.getInstance(application).getNewsDao()
     }
 }

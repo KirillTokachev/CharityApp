@@ -11,10 +11,8 @@ import dagger.Module
 interface HelpCategoryUseCaseModule {
 
     @Binds
-    @ApplicationScope
     fun bindLoadHelpListUseCase(impl: LoadHelpListUseCaseImpl): LoadHelpListUseCase
 
     @Binds
-    @ApplicationScope
     fun bindSaveHelpListUseCase(impl: SaveHelpsUseCaseImpl): SaveHelpsUseCase
 }

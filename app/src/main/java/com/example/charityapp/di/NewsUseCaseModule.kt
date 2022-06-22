@@ -11,10 +11,8 @@ import dagger.Module
 interface NewsUseCaseModule {
 
     @Binds
-    @ApplicationScope
     fun bindLoadNewsUseCase(impl: LoadNewsUseCaseImpl): LoadNewsUseCase
 
     @Binds
-    @ApplicationScope
     fun bindSaveNewsUseCase(impl: SaveNewsUseCaseImpl): SaveNewsUseCase
 }
