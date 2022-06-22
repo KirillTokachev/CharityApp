@@ -5,8 +5,9 @@ import com.example.charityapp.data.mappers.HelpCategoryDbToHelpCategoryDomainMap
 import com.example.charityapp.data.mappers.HelpCategoryDomainToHelpCategoryDbMapper
 import com.example.charityapp.domain.model.HelpCategory
 import com.example.charityapp.domain.repository.HelpCategoryRepository
+import javax.inject.Inject
 
-class HelpCategoryRepositoryImpl(
+class HelpCategoryRepositoryImpl @Inject constructor(
     private val helpCategoryDao: HelpCategoryDao,
     private val helpCategoryDomainToHelpCategoryDbMapper: HelpCategoryDomainToHelpCategoryDbMapper,
     private val helpCategoryDbToHelpCategoryDomainMapper: HelpCategoryDbToHelpCategoryDomainMapper

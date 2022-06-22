@@ -2,8 +2,9 @@ package com.example.charityapp.data.mappers
 
 import com.example.charityapp.data.database.NewsDbModel
 import com.example.charityapp.domain.model.News
+import javax.inject.Inject
 
-class NewsDbToNewsDomainMapper constructor() : (NewsDbModel) -> News {
+class NewsDbToNewsDomainMapper @Inject constructor() : (NewsDbModel) -> News {
 
     override fun invoke(dbModel: NewsDbModel) =
         with(dbModel) {

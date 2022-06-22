@@ -5,8 +5,9 @@ import com.example.charityapp.data.mappers.NewsDbToNewsDomainMapper
 import com.example.charityapp.data.mappers.NewsDomainToNewsDbMapper
 import com.example.charityapp.domain.model.News
 import com.example.charityapp.domain.repository.NewsRepository
+import javax.inject.Inject
 
-class NewsRepositoryImpl(
+class NewsRepositoryImpl @Inject constructor(
     private val newsDao: NewsDao,
     private val newsDbToNewsDomainMapper: NewsDbToNewsDomainMapper,
     private val newsDomainToNewsDbMapper: NewsDomainToNewsDbMapper
