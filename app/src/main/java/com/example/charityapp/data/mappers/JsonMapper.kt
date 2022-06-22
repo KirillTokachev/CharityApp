@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.res.AssetManager
 import com.example.charityapp.data.database.HelpCategoryDbModel
 import com.example.charityapp.data.database.NewsDbModel
-import com.example.charityapp.data.network.HelpCategoryNet
-import com.example.charityapp.data.network.NewsNet
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

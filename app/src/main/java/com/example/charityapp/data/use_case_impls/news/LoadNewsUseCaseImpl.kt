@@ -3,8 +3,9 @@ package com.example.charityapp.data.use_case_impls.news
 import com.example.charityapp.domain.model.News
 import com.example.charityapp.domain.repository.NewsRepository
 import com.example.charityapp.domain.use_cases.news_use_case.LoadNewsUseCase
+import javax.inject.Inject
 
-class LoadNewsUseCaseImpl(
+class LoadNewsUseCaseImpl @Inject constructor(
     private val repository: NewsRepository
 ) : LoadNewsUseCase {
 
