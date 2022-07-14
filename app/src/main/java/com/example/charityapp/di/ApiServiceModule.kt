@@ -9,9 +9,12 @@ import javax.inject.Singleton
 @Module
 interface ApiServiceModule {
 
-    @Provides
-    @Singleton
-    fun provideApiService(): ApiService {
-        return ApiFactory.apiService
+    companion object {
+        @JvmStatic
+        @Provides
+        @Singleton
+        fun provideApiService(): ApiService {
+            return ApiFactory.apiService
+        }
     }
 }

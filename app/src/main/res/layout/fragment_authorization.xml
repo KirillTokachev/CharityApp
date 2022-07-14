@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".presentation.ui.AuthorizationFragment">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/app_bar_authorization"
+    android:layout_width="@dimen/fragment_0_dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/Theme.CharityApp"
+        app:layout_scrollFlags="enterAlways"
+        app:navigationIcon="@drawable/ic_back">
+
+        <TextView
+            android:id="@+id/title_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/fragment_15_dp"
+            android:layout_marginEnd="@dimen/fragment_18_dp"
+            android:maxLines="1"
+            android:text="@string/authorization"
+            android:textColor="@color/white"
+            android:theme="@style/text_style_2" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<TextView
+    android:id="@+id/text_view_authorization_social"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/fragment_55_dp"
+    android:paddingEnd="@dimen/fragment_55_dp"
+    android:layout_marginTop="@dimen/fragment_40_dp"
+    android:text="@string/auth_text_title"
+    style="@style/authorization"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/app_bar_authorization" />
+
+<ImageView
+    android:id="@+id/image_view_vk"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_80_dp"
+    android:src="@drawable/vk"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_authorization_social" />
+
+<ImageView
+    android:id="@+id/image_view_fb"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_40_dp"
+    android:src="@drawable/fb"
+    app:layout_constraintStart_toEndOf="@+id/image_view_vk"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_authorization_social" />
+
+<ImageView
+    android:id="@+id/image_view_ok"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_40_dp"
+    android:src="@drawable/ok"
+    app:layout_constraintStart_toEndOf="@+id/image_view_fb"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_authorization_social" />
+
+<TextView
+    android:id="@+id/text_view_authorization_app"
+    style="@style/authorization"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginTop="@dimen/fragment_40_dp"
+    android:text="@string/text_view_auth_text"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/image_view_fb" />
+
+<TextView
+    android:id="@+id/text_view_email"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:text="@string/email"
+    style="@style/text_style_15"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_20_dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_authorization_app" />
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/text_input_layout_email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:passwordToggleEnabled="true"
+    android:hint="@string/e_mail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_email">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_input_edit_text_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+<TextView
+    android:id="@+id/text_view_password"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:text="@string/password_auth"
+    style="@style/text_style_15"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_20_dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_input_layout_email" />
+
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/text_input_layout_password"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:passwordToggleEnabled="true"
+    android:hint="@string/password"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_view_password">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_input_edit_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+
+</com.google.android.material.textfield.TextInputLayout>
+
+
+<Button
+    android:id="@+id/button_authorization"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginStart="@dimen/fragment_20_dp"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginEnd="@dimen/fragment_20_dp"
+    android:text="@string/enter"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_input_layout_password" />
+
+<TextView
+    android:id="@+id/text_view_how_to_password"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:text="@string/how_to_password"
+    style="@style/link"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:layout_marginStart="@dimen/fragment_20_dp"
+    app:layout_constraintStart_toStartOf="@+id/button_authorization"
+    app:layout_constraintTop_toBottomOf="@+id/button_authorization"/>
+
+<TextView
+    android:id="@+id/text_view_how_to_registration"
+    style="@style/link"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/fragment_0_dp"
+    android:layout_marginTop="@dimen/fragment_20_dp"
+    android:text="@string/registration"
+    app:layout_constraintTop_toBottomOf="@id/button_authorization"
+    android:layout_marginEnd="@dimen/fragment_20_dp"
+    app:layout_constraintEnd_toEndOf="@id/button_authorization"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

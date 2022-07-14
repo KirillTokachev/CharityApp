@@ -15,8 +15,12 @@ interface HelpCategoryModule {
     @Binds
     fun bindHelpCategoryRepository(impl: HelpCategoryRepositoryImpl): HelpCategoryRepository
 
-    @Provides
-    fun provideHelpCategoryDao(application: Application): HelpCategoryDao {
-        return AppDataBase.getInstance(application).getHelpCategoryDao()
+    companion object {
+
+        @JvmStatic
+        @Provides
+        fun provideHelpCategoryDao(application: Application): HelpCategoryDao {
+            return AppDataBase.getInstance(application).getHelpCategoryDao()
+        }
     }
 }

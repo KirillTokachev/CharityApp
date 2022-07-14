@@ -1,14 +1,15 @@
 package com.example.charityapp.data.mappers
 
-import com.example.charityapp.data.database.HelpCategoryDbModel
 import com.example.charityapp.data.network.HelpCategoryNet
+import com.example.charityapp.domain.model.HelpCategory
+import javax.inject.Inject
 
-class HelpCategoryNetToHelpCategoryDbMapper constructor() :
-        (HelpCategoryNet) -> HelpCategoryDbModel {
+class HelpCategoryNetToHelpCategoryDomain @Inject constructor() :
+        (HelpCategoryNet) -> HelpCategory {
 
     override fun invoke(net: HelpCategoryNet) =
         with(net) {
-            HelpCategoryDbModel(
+            HelpCategory(
                 id = id,
                 name = name,
                 icon = icon
