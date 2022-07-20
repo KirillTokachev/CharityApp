@@ -15,7 +15,7 @@ import com.example.charityapp.presentation.views.SplashView
 
 private const val TIME_SLEEP: Long = 1700
 
-class Splash : MvpAppCompatFragment(), SplashView {
+class SplashFragment : MvpAppCompatFragment(), SplashView {
 
     @InjectPresenter
     lateinit var presenter: SplashPresenter
@@ -26,6 +26,7 @@ class Splash : MvpAppCompatFragment(), SplashView {
     ): View? {
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
+
 
     override fun downloading() {
         presenter.sleep(TIME_SLEEP)

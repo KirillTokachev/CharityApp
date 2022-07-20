@@ -15,6 +15,8 @@ class HelpItemAdapter() :
 
     var onItemClickListener: OnItemClickListener? = null
 
+    private val mapper = MapHelpIcon()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HelpItemViewHolder {
         val binding = HelpItemBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -28,28 +30,8 @@ class HelpItemAdapter() :
         val helpList = getItem(position)
         with(holder.binding) {
             with(helpList) {
-                when (helpList.icon) {
-                    CHILD -> {
-                        Picasso.get().load(R.drawable.child)
-                            .into(helpCategoryImage)
-                    }
-                    ADULTS -> {
-                        Picasso.get().load(R.drawable.adults)
-                            .into(helpCategoryImage)
-                    }
-                    ELDERLY -> {
-                        Picasso.get().load(R.drawable.elderly)
-                            .into(helpCategoryImage)
-                    }
-                    ANIMALS -> {
-                        Picasso.get().load(R.drawable.animals)
-                            .into(helpCategoryImage)
-                    }
-                    EVENTS -> {
-                        Picasso.get().load(R.drawable.events)
-                            .into(helpCategoryImage)
-                    }
-                }
+                Picasso.get().load(mapper.map(helpList.icon))
+                    .into(helpCategoryImage)
                 helpCategoryText.text = name
                 root.setOnClickListener {
                     onItemClickListener?.onClick(this)
@@ -60,13 +42,5 @@ class HelpItemAdapter() :
 
     interface OnItemClickListener {
         fun onClick(helpCategory: HelpCategory)
-    }
-
-    companion object {
-        const val CHILD = "child.png"
-        const val ADULTS = "adults.png"
-        const val ELDERLY = "elderly.png"
-        const val ANIMALS = "animals.png"
-        const val EVENTS = "events.png"
     }
 }

@@ -7,12 +7,12 @@ import com.example.charityapp.presentation.views.SplashView
 @InjectViewState
 class SplashPresenter : MvpPresenter<SplashView>() {
 
-    fun sleep(millis: Long) {
-        Thread.sleep(millis)
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        viewState.downloading()
     }
 
-    override fun attachView(view: SplashView?) {
-        super.attachView(view)
-        viewState.downloading()
+    fun sleep(millis: Long) {
+        Thread.sleep(millis)
     }
 }

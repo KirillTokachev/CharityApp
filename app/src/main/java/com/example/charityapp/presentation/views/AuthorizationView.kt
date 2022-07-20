@@ -6,5 +6,5 @@ interface AuthorizationView : MvpView {
 
     fun validate()
 
-    fun navigate()
+    fun setupNavigateClickListener()
 }

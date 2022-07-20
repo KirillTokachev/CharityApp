@@ -101,10 +101,6 @@ dependencies {
     implementation 'tech.schoolhelper:moxy-x:1.7.0'
     implementation 'tech.schoolhelper:moxy-x-androidx:1.7.0'
     kapt 'tech.schoolhelper:moxy-x-compiler:1.7.0'
-    /*implementation 'com.arello-mobile:moxy:1.5.5'
-    annotationProcessor 'com.arello-mobile:moxy-compiler:1.5.5'
-    implementation 'tech.schoolhelper:moxy-x-androidx:1.7.0'
-    implementation 'tech.schoolhelper:moxy-x-material:1.7.0'*/
 
     // Dagger
     kapt 'com.google.dagger:dagger-compiler:2.42'

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.charityapp.presentation.ui.Splash"
+        android:name="com.example.charityapp.presentation.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.charityapp.presentation.ui.Main"
+        android:name="com.example.charityapp.presentation.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 

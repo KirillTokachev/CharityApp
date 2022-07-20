@@ -10,10 +10,13 @@
         android:name="com.example.charityapp.presentation.ui.AuthorizationFragment"
         android:label="fragment_authorization"
         tools:layout="@layout/fragment_authorization" >
+
         <action
             android:id="@+id/action_authorizationFragment_to_helpFragment"
             app:destination="@id/helpFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.example.charityapp.presentation.ui.HelpFragment"

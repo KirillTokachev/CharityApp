@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/fragment_168_dp"
     android:layout_height="@dimen/fragment_128_dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="@dimen/fragment_8_dp"
     android:layout_marginBottom="@dimen/fragment_16_dp"
     android:layout_marginEnd="@dimen/fragment_8_dp"
@@ -36,11 +36,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/fragment_8_dp"
             android:layout_marginBottom="@dimen/fragment_16_dp"
-            tools:text="Дети"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/help_category_image" />
+            app:layout_constraintTop_toBottomOf="@+id/help_category_image"
+            tools:text="Дети"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

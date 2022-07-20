@@ -13,15 +13,14 @@
     <string name="take_a_photo">Сделать снимок</string>
     <string name="delete_photo">Удалить фото</string>
     <string name="enter_help_category">Выберите категорию помощи</string>
-    <string name="link_email"> <u>Напишите нам</u> </string>
-    <string name="link_site"> <u>Перейти на сайт организаии</u> </string>
+    <string name="link_email"><u>Напишите нам</u></string>
+    <string name="link_site"><u>Перейти на сайт организаии</u></string>
     <string name="events">По мероприятиям</string>
     <string name="charity">По НКО</string>
     <string name="camerax">CameraX</string>
     <string name="news_title_toolbar">Новости</string>
     <string name="filter_text_title_toolbar">Фильтр</string>
     <string name="category_of_help">Категории помощи :</string>
-    <string name="_102">+102</string>
     <string name="help_with_things">Помочь \nвещами</string>
     <string name="become_a_volunteer">Стать\nволонтером</string>
     <string name="professional_help">Проф.\n помощь</string>
@@ -32,8 +31,7 @@
     <string name="e_mail">Введите e-mail</string>
     <string name="password">Введите пароль</string>
     <string name="enter">Войти</string>
-    <string name="auth_text_title">Для участия в мероприятиях войдите
-в приложение через социальые сети</string>
+    <string name="auth_text_title">Для участия в мероприятиях войдите в приложение через социальые сети</string>
     <string name="text_view_auth_text">Или авторизуйтесь через приложение</string>
     <string name="how_to_password"> <u>Забыли пароль?</u> </string>
     <string name="registration"><u>Регистрация</u> </string>
@@ -42,7 +40,7 @@
     <string name="password_auth">Пароль</string>
     <string name="search">Search</string>
     <string name="search_clue_text1">Напишите в строке поиска название мероприятия или ключевые слова.</string>
-    <string name="text_view_1">Например,</string>
-    <string name="text_view_2">мастер-класс, помощь</string>
+    <string name="tv_no_result_layout">Например,</string>
+    <string name="tv_no_result_layout_link">мастер-класс, помощь</string>
     <string name="tv_help">Помочь</string>
 </resources>

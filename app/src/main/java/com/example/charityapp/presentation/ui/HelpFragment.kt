@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
@@ -12,9 +13,7 @@ import com.example.charityapp.presentation.CharityApplication
 import com.example.charityapp.presentation.adapters.HelpItemAdapter
 import com.example.charityapp.presentation.presenter.HelpPresenter
 import com.example.charityapp.presentation.views.HelpView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 const val SPAN_COUNT = 2
@@ -29,6 +28,8 @@ class HelpFragment : MvpAppCompatFragment(), HelpView {
         (requireActivity().application as CharityApplication).component
     }
 
+    private val _adapter = HelpItemAdapter()
+
     @Inject
     lateinit var presenter: HelpPresenter
 
@@ -37,7 +38,6 @@ class HelpFragment : MvpAppCompatFragment(), HelpView {
     override fun onCreate(savedInstanceState: Bundle?) {
         component.inject(this)
         super.onCreate(savedInstanceState)
-        fetchHelpCategory()
     }
 
     override fun onCreateView(
@@ -50,7 +50,20 @@ class HelpFragment : MvpAppCompatFragment(), HelpView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        fetchHelpCategory()
+        binding.recyclerViewHelp.apply {
+            adapter = _adapter
+            layoutManager = GridLayoutManager(context, SPAN_COUNT)
+        }
         loadHelpCategory()
+        isVisibleProgress()
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    private fun isVisibleProgress() {
+        GlobalScope.launch(Dispatchers.Main) {
+            presenter.isVisibleProgressBar(binding.progressBarHelp)
+        }
     }
 
     override fun fetchHelpCategory() {
@@ -60,15 +73,9 @@ class HelpFragment : MvpAppCompatFragment(), HelpView {
     }
 
     override fun loadHelpCategory() {
-        val _adapter = HelpItemAdapter()
         scope.launch() {
             _adapter.submitList(presenter.loadHelp())
         }
-        binding.recyclerViewHelp.apply {
-            adapter = _adapter
-            layoutManager = GridLayoutManager(context, SPAN_COUNT)
-        }
-        binding.progressBarHelp.visibility = GONE
     }
 
     override fun onDestroy() {

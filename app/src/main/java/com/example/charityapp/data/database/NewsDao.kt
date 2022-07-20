@@ -9,8 +9,8 @@ import androidx.room.Query
 interface NewsDao {
 
     @Query("SELECT * FROM ${DbUtil.NEWS}")
-    fun loadNews(): List<NewsDbModel>
+    suspend fun loadNews(): List<NewsDbModel>
 
     @Insert(entity = NewsDbModel::class, onConflict = OnConflictStrategy.REPLACE)
-    fun saveNews(news: List<NewsDbModel>)
+    suspend fun saveNews(news: List<NewsDbModel>)
 }

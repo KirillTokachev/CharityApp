@@ -3,6 +3,8 @@ package com.example.charityapp.presentation.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
@@ -13,10 +15,7 @@ import com.example.charityapp.databinding.FragmentMainBinding
 import com.example.charityapp.presentation.presenter.MainPresenter
 import com.example.charityapp.presentation.views.MainView
 
-private const val GONE = View.GONE
-private const val VISIBLE = View.VISIBLE
-
-class Main : MvpAppCompatFragment(), MainView {
+class MainFragment : MvpAppCompatFragment(), MainView {
     private var _binding: FragmentMainBinding? = null
     private val binding
         get() = _binding ?: throw NumberFormatException("FragmentMainBinding is null")
