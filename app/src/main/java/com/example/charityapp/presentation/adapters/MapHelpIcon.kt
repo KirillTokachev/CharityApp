@@ -22,7 +22,7 @@ class MapHelpIcon {
                 R.drawable.events
             }
             else -> {
-                com.google.android.material.R.drawable.ic_mtrl_chip_checked_circle
+                R.drawable.ic_default
             }
         }
     }
