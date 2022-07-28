@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottom_menu_news_string">Новости</string>
+    <string name="bottom_menu_search_string">Поиск</string>
+    <string name="bottom_menu_help_string">Помочь</string>
+    <string name="bottom_menu_history_string">История</string>
+    <string name="bottom_menu_profile_string">Профиль</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/authorizationFragment">
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.charityapp.presentation.ui.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization" >
+
+        <action
+            android:id="@+id/action_authorizationFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.charityapp.presentation.ui.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+
+</navigation>
