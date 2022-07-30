@@ -9,7 +9,9 @@ import com.example.charityapp.data.database.DbUtil.DB_NAME
 
 @Database(
     entities = [NewsDbModel::class, HelpCategoryDbModel::class],
-    version = DbUtil.DB_VERSION
+    version = DbUtil.DB_VERSION,
+    exportSchema = false
+
 )
 @TypeConverters(ListToStringConverter::class)
 abstract class AppDataBase : RoomDatabase() {
